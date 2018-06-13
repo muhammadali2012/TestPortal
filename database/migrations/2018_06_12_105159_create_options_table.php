@@ -20,6 +20,7 @@ class CreateOptionsTable extends Migration
             $table->tinyInteger('is_active');
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('question_id')->references('id')->on('questions');
         });
     }
 

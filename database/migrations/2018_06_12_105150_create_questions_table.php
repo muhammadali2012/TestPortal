@@ -15,14 +15,15 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('catagory_id');
+            $table->integer('category_id');
             $table->text('statement');
             $table->tinyInteger('type');
             $table->tinyInteger('is_active');
-            $table->integer('option_id');
+            $table->integer('correct_option_id')->comment("Correct option id from options table");
             $table->softDeletes();
-
             $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('correct_option_id')->references('id')->on('options');
         });
     }
 
