@@ -1,4 +1,8 @@
 @extends('admin.layout')
+
+
 @section('content')
-    <h1> in the layout </h1>
+
+    <h1>here is the text from dsadhborad</h1>
+
 @stop
